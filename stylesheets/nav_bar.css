@@ -1,0 +1,79 @@
+.nav_bar {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	opacity: 0.8;
+	background-color: black;
+	width: 100%;
+	padding-left: 10px;
+	z-index: 1;
+}
+.nav_bar ul {
+	font-family: roboto;
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+.nav_bar ul a{
+	display: inline-block;
+	text-decoration: none;
+	background-color: black;
+	color: white;
+	width: 100px;
+	height: 25px;
+	text-align: center;
+	padding: 8px; 
+	
+}
+
+.nav_bar ul a:hover {
+	color: #20B2AA;
+}
+
+.nav_bar ul a.onpage {
+	color: #20B2AA;
+}
+
+.nav_bar ul li {
+	display: inline;
+}
+
+.nav_bar ul li ul {
+	position: absolute;
+	display: none;
+}
+
+.nav_bar ul li ul li {
+	display: block;
+}
+
+.nav_bar ul li:hover ul {
+	display: block;
+}
+
+
+.button_container {
+	position: absolute;
+	right: 55px;
+	top: 6px;
+}
+
+a.button{
+	display: inline-block;
+	font-family: roboto;
+	text-align: center;
+	height: 25px;
+	width: 100px;
+	background-color: none;
+	color: white;
+	text-decoration: none;
+	border: solid white 1px;
+	border-radius: 1px;
+}
+
+a:hover.button {
+	color: black;
+	background-color: white;
+}
+
