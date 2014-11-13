@@ -34,9 +34,9 @@ $(window).scroll(function() {
 
     if (scroll > header_bottom) {
         //document.getElementById("nav").style.display = "block";
-        $("#nav").fadeIn(200);
+        $("#nav").slideDown(200);
     } else if (scroll < header_bottom) {
         //document.getElementById("nav").style.display = "none";
-        $("#nav").fadeOut(200);
+        $("#nav").slideUp(200);
     }
 });
