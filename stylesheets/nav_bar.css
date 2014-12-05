@@ -3,11 +3,11 @@
 	top: 0px;
 	left: 0px;
 	opacity: 0.8;
-	background-color: black;
+	background-color: #35343B;
 	width: 100%;
-	padding-left: 10px;
+	margin-left: 0px;
+	padding-right: 16px;
 	z-index: 1;
-	display: none;
 }
 .nav_bar ul {
 	font-family: roboto;
@@ -19,7 +19,7 @@
 .nav_bar ul a{
 	display: inline-block;
 	text-decoration: none;
-	background-color: black;
+	background-color: #35343B;
 	color: white;
 	width: 100px;
 	height: 25px;
