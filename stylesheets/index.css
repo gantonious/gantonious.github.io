@@ -22,6 +22,7 @@
 	font-weight: 100;
 	text-align: center;
 	margin-top: -40px;
+	margin-left: 8px;
 	top: 100px;
 }
 
@@ -33,7 +34,7 @@
 }
 
 .content{
-	width: 850px;
+	width: 900px;
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
@@ -78,7 +79,7 @@
 .project_viewer{
 	position: relative;
 	width: 850px;
-	height: 300px;
+	height: 270px;
 }
 
 .project_preview{
@@ -113,7 +114,44 @@
 	color: white;
 }
 
-a.button{
+.showcase_block{
+	position: relative;
+	width: 420px;
+	height: 120px;
+	display: inline-block;
+	font-family: roboto;
+	z-index: 0;
+}
+
+.showcase_icon{
+	position: absolute;
+	top: 23px;
+	left: 10px;
+	width: 74px;
+	height: 74px;
+	border-radius: 37px;
+	color: #1597D8;
+	border: 1px solid #1597D8;
+}
+
+.showcase_content{
+	position: absolute;
+	text-align: left;
+	font-size: 80%;
+	left: 100px;	
+}
+
+a {
+	color: #1597D8;
+	text-decoration: none;
+
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.button a{
 	display: inline-block;
 	text-align: center;
 	height: 25px;
@@ -125,7 +163,7 @@ a.button{
 	border-radius: 2px;
 }
 
-a:hover.button {
+.button a:hover{
 	color: white;
 	background-color: #20B2AA;
 }

@@ -60,21 +60,3 @@
 	top: 6px;
 }
 
-a.button{
-	display: inline-block;
-	font-family: roboto;
-	text-align: center;
-	height: 25px;
-	width: 100px;
-	background-color: none;
-	color: white;
-	text-decoration: none;
-	border: solid white 1px;
-	border-radius: 1px;
-}
-
-a:hover.button {
-	color: black;
-	background-color: white;
-}
-
