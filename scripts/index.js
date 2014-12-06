@@ -23,14 +23,14 @@ $(window).scroll(function() {
     
   	if (scroll < about_location.top - 50) {
   		document.getElementById("abt").style.color = "white";
-        document.getElementById("hme").style.color = "#20B2AA";
+        document.getElementById("hme").style.color = "#1597D8";
   	} else if (scroll > about_location.top - 50 && scroll < projects_location.top - 50) {
-  		document.getElementById("abt").style.color = "#20B2AA";
+  		document.getElementById("abt").style.color = "#1597D8";
         document.getElementById("hme").style.color = "white";
         document.getElementById("prj").style.color = "white";
   	} else if (scroll > projects_location.top - 50){
         document.getElementById("abt").style.color = "white";
-        document.getElementById("prj").style.color = "#20B2AA";
+        document.getElementById("prj").style.color = "#1597D8";
     }
     
 });
