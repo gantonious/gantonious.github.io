@@ -4,12 +4,17 @@
     <head>
 
     <title>Home</title>
+    <meta name="description" content="George Antonious's Personal Website">
 
-    <link rel="stylesheet" href="stylesheets/index.css">
+    <link rel="stylesheet" href="stylesheets/main.css">
     <link rel="stylesheet" href="stylesheets/nav_bar.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="scripts/index.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,100' rel='stylesheet' type='text/css'>
+
+    </head>
+
+    <body>
 
     <div id="home" class = "head">
         <div class = "head_content">
@@ -25,12 +30,7 @@
             <div class="link_icon"><a href="http://www.twitch.tv/gflight92">
             <img src="media/icons/twitch-64.png"></a></div>
         </div>
-    </div>
-
-    </head>
-
-    <body>
-    
+    </div>    
 
     <div id="nav" class = "nav_bar">
         <ul>
@@ -41,7 +41,7 @@
         </ul>
     </div>
 
-    <div class = "content">
+    <div class = "main_content">
 
         <p id="about" class="content_title">About</p>
 
@@ -61,7 +61,7 @@
                     <p>I am interested in a wide variety of videogame genres from MMORPGs to arcade games. I also enjoy watching anime in my free time.</p>
                     </div>
             </div>
-             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <div class="info_block">
                 <div class="info_icon"></div>
                 <div class="info_content">
@@ -71,10 +71,34 @@
             </div>
         </p>
 
+        <div class="divider"></div>
+
         <p id="projects" class="content_title">Projects</p>
 
         <div class="project_viewer">
-            <div class="project_preview">
+            <div id="viewer" class="project_preview"></div>
+
+            <!-- The following are the code snip-its for the viewer -->
+            <div id="PRJ0" style="display: none;">
+                .head {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;position: relative;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;width: 100%;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;height: 430px;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;background-color: #FEFAFF;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;color: #35343B;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;margin-left: -8px;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;padding-right: 16px;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;text-align: center;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;font-family: roboto;<br>
+                }<br>
+                <br>
+                body{<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;margin: 0px;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;padding: 0px;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;border: 0px;<br>
+                }<br>
+            </div>
+            <div id="PRJ1" style="display: none;">
                 .head {<br>
                 position: relative;<br>
                 width: 100%;<br>
@@ -87,18 +111,26 @@
                 font-family: roboto;<br>
                 }<br>
                 <br>
-                .body{<br>
+                body{<br>
                     margin: 0px;<br>
                     padding: 0px;<br>
                     border: 0px;<br>
                 }<br>
             </div>
+            <!-- End of Snip-its -->
+
             <div class="project_selector">
-                <div class="project_button">Code Snip-it from this site!</div>
+                <div id="BUT0" onclick="updateProjectPreview(0)" class="project_button">Code Snip-it from this site!</div>
+                <div style="height: 5px;"></div>
+                <div id="BUT1" onclick="updateProjectPreview(1)" class="project_button">Code Snip-it from this site! Number 2</div>
+                <div style="height: 5px;"></div>
+                <div id="BUT0" onclick="updateProjectPreview(0)" class="project_button">Code Snip-it from this site! Number 3</div>
+                <div style="height: 5px;"></div>
+                <div id="BUT1" onclick="updateProjectPreview(1)" class="project_button">Code Snip-it from this site! Number r</div>
             </div>
         </div>
     
-    <p style="font-size:175%; font-weight:100;">Project Milestones</p>
+    <p style="font-size:175%; font-weight:100;">Milestones</p>
     <p>
         <div class="showcase_block">
             <div class="showcase_icon">
@@ -107,7 +139,7 @@
             <span style="font-size: 70%">2014</span>
             </div>
             <div class="showcase_content">
-            <span style="font-size: 130%;">Completed PvPunio</span><br>
+            <span style="font-size: 130%;">PvPunio</span><br>
             A top down PvP game for Arduino. Features 360 degree moving and shooting, five different maps to play on, and powerups that are sure to make every game wild! Playtesting has shown this game to be difficult to put down. <a href="https://github.com/snackthyme/pvpuino">View source code on Github.</a>
 
             </div>
@@ -121,8 +153,7 @@
             </div>
             <div class="showcase_content">
             <span style="font-size: 130%;">Edmonton restaurant filterer for Arduino</span><br>
-            Allows you to navigate around the map of Edmonton and filter restaurants based on a threshold rating and closest proximity to the current cursor position.
-            <a href="https://github.com/snackthyme/c274-restaurant-map-v2">View source code on Github.</a>
+            Allows you to navigate around the map of Edmonton and filter restaurants based on a threshold rating and closest proximity to the current cursor position. <a href="https://github.com/snackthyme/c274-restaurant-map-v2">View source code on Github.</a>
             </div>
         </div>
     </p>
