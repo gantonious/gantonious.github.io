@@ -150,7 +150,7 @@ body {
 }
 .showcase_block {
 	position: relative;
-	width: 420px;
+	width: 416px;
 	height: 120px;
 	display: inline-block;
 	font-family: roboto;
@@ -160,7 +160,7 @@ body {
 .showcase_icon {
 	position: absolute;
 	top: 23px;
-	left: 10px;
+	left: 0px;
 	width: 74px;
 	height: 74px;
 	border-radius: 37px;
