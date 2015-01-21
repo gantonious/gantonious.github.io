@@ -43,14 +43,15 @@ $(window).scroll(function() {
     
 });
 
+
 function pull_twitch_info(){
-    var xmlhttp = new XMLHttpRequest();
     var src = "https://api.twitch.tv/kraken/streams/gflight92";
 
-    xmlhttp.onreadystatechange = function() {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            var twitch_info = JSON.parse(xmlhttp.responseText);
-
+    $.ajax({
+        url: src,
+        type: 'get',
+        dataType: 'jsonp',
+        success:function(twitch_info){
             if (twitch_info.stream == null) {
                 // execute if not streaming
             } else {
@@ -58,11 +59,7 @@ function pull_twitch_info(){
                 $("#live").css('display', 'inline-block');
             }
         }
-    }
-
-    xmlhttp.open("GET", src, false);
-    xmlhttp.send();
-
+    });
 }
 
 $(window).load(function() {
