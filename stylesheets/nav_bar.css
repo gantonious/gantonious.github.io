@@ -1,16 +1,15 @@
 .nav_bar {
 	position: fixed;
+	font-family: roboto;
 	top: 0px;
 	left: 0px;
 	opacity: 0.8;
 	background-color: #35343B;
 	width: 100%;
 	margin-left: 0px;
-	padding-right: 16px;
 	z-index: 1;
 }
 .nav_bar ul {
-	font-family: roboto;
 	list-style-type: none;
 	margin: 0px;
 	padding: 0px;
@@ -54,9 +53,29 @@
 }
 
 
-.button_container {
+.live_container {
 	position: absolute;
-	right: 55px;
+	display: none;
+	right: 0px;
 	top: 6px;
+	width: 160px;
+	color: red;
+}
+
+.live_circle {
+	position: absolute;
+	background-color: red;
+	left: 0px;
+	top: 4px;
+	height: 16px;
+	width: 16px;
+	border-radius: 8px;
+}
+
+.live_content {
+	position: absolute;
+	left: 24px;
+	top: 3px;
+	color: red
 }
 
