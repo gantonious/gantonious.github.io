@@ -44,8 +44,8 @@ $(window).scroll(function() {
 });
 
 
-function pull_twitch_info(){
-    var src = "https://api.twitch.tv/kraken/streams/gflight92";
+function pull_twitch_info(user){
+    var src = "https://api.twitch.tv/kraken/streams/" + user;
 
     $.ajax({
         url: src,
@@ -62,15 +62,62 @@ function pull_twitch_info(){
     });
 }
 
-$(window).load(function() {
-    // checks to see if im streaming on twitch
-    pull_twitch_info()
+function github_commits(user, limit){
+    var i = 0; // universal counter
+    var k = 0; // PushEvent counter
+    var out = ""; // the html that will grab the commits
 
+    $.ajax({
+        url: 'https://api.github.com/users/' + user,
+        type: 'get',
+        dataType: 'json',
+        success:function(events){
+            // formats the user data
+            out += '<div class="activity_block"><div class="activity_icon"><a href="https://github.com/' + user; 
+            out += '"><img style="width: 64px; height: 64px; border-radius: 3px;" src="'+ events.avatar_url + '"></a></div>';
+            out += '<div class="activity_content" style="left: 75px; top: 2px;"><span style="font-size: 110%;">' + events.name + '</span><br>';
+            out += events.login + '</div></div>';
+        }  
+    });
+
+    $.ajax({
+        url: 'https://api.github.com/users/' + user + '/events',
+        type: 'get',
+        dataType: 'json',
+        success:function(events){
+            // formats the commit data
+            while(k < limit && i < events.length){
+                if (events[i].type == "PushEvent"){
+                    var d = (events[i].created_at.split("T")[0]).split("-");
+                    var date = new Date(d[0], d[1] - 1, d[2]);
+                    date = date.toLocaleDateString();
+
+                    out += '<div class="activity_block"><div class="activity_content"> pushed ' 
+                    out += '<a href="https://github.com/' + events[i].repo.name + '/commit/' + events[i].payload.head + '">' 
+                    out += "'" + events[i].payload.commits[0].message.split("\n")[0] + "'" + '</a>' + ' to '; 
+                    out += '<a href="https://github.com/' + events[i].repo.name + '">' + events[i].repo.name + '</a>';
+                    out += '<br><span style="font-size:85%;">on ' + date + '</span></div></div>';
+                    k++;
+                }
+                i++;
+            } 
+            // applies the html
+            $("#activity").html(out);
+        }  
+    });
+}
+
+$(window).load(function() {
     // loads first snip-it into snip-it viewer
     document.getElementById("viewer").innerHTML = document.getElementById("PRJ0").innerHTML;
     document.getElementById("description").innerHTML = document.getElementById("DES0").innerHTML;
     $("#BUT0").css('color', '#35343B');
     $("#BUT0").css('background-color', '#FEFAFF');
+
+    // checks to see if im streaming on twitch
+    pull_twitch_info("gflight92");
+    // pulls latest commits from github
+    github_commits("gantonious", 5);
 });
 
 function updateProjectPreview(ID){

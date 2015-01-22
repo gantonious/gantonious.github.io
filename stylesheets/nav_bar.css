@@ -56,7 +56,7 @@
 .live_container {
 	position: absolute;
 	display: none;
-	right: 0px;
+	right: 4px;
 	top: 6px;
 	width: 160px;
 	color: red;
@@ -66,7 +66,7 @@
 	position: absolute;
 	background-color: red;
 	left: 0px;
-	top: 4px;
+	top: 6px;
 	height: 16px;
 	width: 16px;
 	border-radius: 8px;
@@ -74,8 +74,8 @@
 
 .live_content {
 	position: absolute;
-	left: 24px;
-	top: 3px;
+	left: 26px;
+	top: 4px;
 	color: red
 }
 

@@ -148,6 +148,7 @@ body {
 	color: #35343B !important;
 	cursor: pointer;
 }
+
 .showcase_block {
 	position: relative;
 	width: 416px;
@@ -173,6 +174,42 @@ body {
 	text-align: left;
 	font-size: 80%;
 	left: 100px;	
+}
+
+.activity_container {
+	position: relative;
+	text-align: left;
+	width: 850px;
+	height: 105%;
+	border-radius: 5px;
+	display: inline-block;
+	font-family: roboto;
+	z-index: 0;
+}
+
+.activity_block {
+	position: relative;
+	width: 280px;
+	height: 90px;
+	display: inline-block;
+	font-family: roboto;
+	z-index: 0;
+}
+
+.activity_icon {
+	position: absolute;
+	width: 64px;
+	height: 64px;
+	top: 0px;
+	left: 0px;
+}
+
+.activity_content {
+	position: absolute;
+	text-align: left;
+	font-size: 95%;
+	top: 0px;
+	left: 0px;	
 }
 
 .blog_title {
