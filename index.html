@@ -184,46 +184,36 @@
                 </div>
 
                 <div id="PRJ3" style="display: none;">
-                    // initializes index, the index is used to prevent pointless rendering when the page is scrolled<br>
-                    var index = -1;<br>
-                    <br>
-                    $(window).scroll(function() {<br>
-                    <div style="display: inline-block; width: 40px;"></div>var scroll = $(window).scrollTop();<br>
-                    <div style="display: inline-block; width: 40px;"></div>var about_location = $("#about").position();<br>
-                    <div style="display: inline-block; width: 40px;"></div>var projects_location = $("#projects").position();<br>
-                    <div style="display: inline-block; width: 40px;"></div>var header_bottom = $("#home").height();<br>
-                    <br>
-                    <div style="display: inline-block; width: 40px;"></div>// updates nav bar links to indicate current location on the page<br>
-                    <div style="display: inline-block; width: 40px;"></div>if (index != 0 && scroll < about_location.top - 50) {<br>
-                    <div style="display: inline-block; width: 80px;"></div>document.getElementById("abt").style.color = "white";<br>
-                    <div style="display: inline-block; width: 80px;"></div>document.getElementById("hme").style.color = "#1597D8";<br>
-                    <div style="display: inline-block; width: 80px;"></div>index = 0;<br>
-                    <div style="display: inline-block; width: 40px;"></div>} else if (index != 1 && scroll > about_location.top - 50 && scroll < projects_location.top - 50 ) {<br>
-                    <div style="display: inline-block; width: 80px;"></div>document.getElementById("abt").style.color = "#1597D8";<br>
-                    <div style="display: inline-block; width: 80px;"></div>document.getElementById("hme").style.color = "white";<br>
-                    <div style="display: inline-block; width: 80px;"></div>document.getElementById("prj").style.color = "white";<br>
-                    <div style="display: inline-block; width: 80px;"></div>index = 1;<br>
-                    <div style="display: inline-block; width: 40px;"></div>} else if (index != 2 && scroll > projects_location.top - 50){<br>
-                    <div style="display: inline-block; width: 80px;"></div>document.getElementById("hme").style.color = "white";<br>
-                    <div style="display: inline-block; width: 80px;"></div>document.getElementById("abt").style.color = "white";<br>
-                    <div style="display: inline-block; width: 80px;"></div>document.getElementById("prj").style.color = "#1597D8";<br>
-                    <div style="display: inline-block; width: 80px;"></div>index = 2;<br>
-                    <div style="display: inline-block; width: 40px;"></div>}<br>
-                    });<br>
+                    function pull_twitch_info(user){<br>
+                    <div style="display: inline-block; width: 40px;"></div>var src = "https://api.twitch.tv/kraken/streams/" + user;<br><br>
+                    <div style="display: inline-block; width: 40px;"></div>$.ajax({<br>
+                    <div style="display: inline-block; width: 80px;"></div>url: src,<br>
+                    <div style="display: inline-block; width: 80px;"></div>type: 'get',<br>
+                    <div style="display: inline-block; width: 80px;"></div>dataType: 'jsonp',<br>
+                    <div style="display: inline-block; width: 80px;"></div>success:function(twitch_info){<br>
+                    <div style="display: inline-block; width: 120px;"></div>if (twitch_info.stream == null) {<br>
+                    <div style="display: inline-block; width: 160px;"></div>// execute if not streaming<br>
+                    <div style="display: inline-block; width: 120px;"></div>} else {<br>
+                    <div style="display: inline-block; width: 160px;"></div>// execute if streaming<br>
+                    <div style="display: inline-block; width: 160px;"></div>$("#live").css('display', 'inline-block');<br>
+                    <div style="display: inline-block; width: 120px;"></div>}<br>
+                    <div style="display: inline-block; width: 80px;"></div>}<br>
+                    <div style="display: inline-block; width: 40px;"></div>});<br>
+                    }<br>
                 </div>
                 <div id ="DES3" style="display: none;">
-                    This Java-script is used to update the colors of the links on the navigation bar as the user scrolls down this page, indicating what section of the page they are on.
+                    This Java-script uses Twitch's API to check if a user is streaming. This function can be used to edit parts of a web-page to indicate if a user is streaming. It also can grab information about the current streaming session.
                 </div>
                 <!-- End of Snip-its -->
 
                 <div class="project_selector">
-                    <div id="BUT0" onclick="updateProjectPreview(0)" class="project_button">Modular Multiplication</div>
+                    <div id = "initial" button-id="0" class="project_button">Modular Multiplication</div>
                     <div style="height: 5px;"></div>
-                    <div id="BUT1" onclick="updateProjectPreview(1)" class="project_button">Modular Exponentiation</div>
+                    <div button-id="1" class="project_button">Modular Exponentiation</div>
                     <div style="height: 5px;"></div>
-                    <div id="BUT2" onclick="updateProjectPreview(2)" class="project_button">CSS Example</div>
+                    <div button-id="2" class="project_button">CSS Example</div>
                     <div style="height: 5px;"></div>
-                    <div id="BUT3" onclick="updateProjectPreview(3)" class="project_button">Java-script Example</div>
+                    <div button-id="3" class="project_button">Twitch API</div>
                 </div>
 
             </div>
@@ -289,7 +279,7 @@
 
         <div class = "foot">
             <div class = "foot_content">
-                Under Development | Developed by George Antonious | 2014
+                Under Development | Developed by George Antonious | 2015
             </div>
         </div>
 

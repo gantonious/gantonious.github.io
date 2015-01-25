@@ -15,6 +15,8 @@ $(function() {
     });
 });
 
+// THE REST OF THIS JAVA-SCRIPT IS DEVELOPED BY GEORGE ANTONIOUS
+
 // initializes index, the index is used to prevent pointless rendering when the page is scrolled
 var index = -1;
 
@@ -26,18 +28,18 @@ $(window).scroll(function() {
 
     // updates nav bar links to indicate current location on the page
   	if (index != 0 && scroll < about_location.top - 50) {
-  		document.getElementById("abt").style.color = "white";
-        document.getElementById("hme").style.color = "#1597D8";
+        $('#hme').css('color', '#1597D8');
+        $('#abt').css('color', 'white');
         index = 0;
   	} else if (index != 1 && scroll > about_location.top - 50 && scroll < projects_location.top - 50 ) {
-  		document.getElementById("abt").style.color = "#1597D8";
-        document.getElementById("hme").style.color = "white";
-        document.getElementById("prj").style.color = "white";
+  		$('#hme').css('color', 'white');
+        $('#abt').css('color', '#1597D8');
+        $('#prj').css('color', 'white');
         index = 1;
   	} else if (index != 2 && scroll > projects_location.top - 50){
-        document.getElementById("hme").style.color = "white";
-        document.getElementById("abt").style.color = "white";
-        document.getElementById("prj").style.color = "#1597D8";
+        $('#hme').css('color', 'white');
+        $('#abt').css('color', 'white');
+        $('#prj').css('color', '#1597D8');
         index = 2;
     }
     
@@ -65,7 +67,7 @@ function pull_twitch_info(user){
 function github_commits(user, limit){
     var i = 0; // universal counter
     var k = 0; // PushEvent counter
-    var out = ""; // the html that will grab the commits
+    var out = ""; // will hold the output html
 
     $.ajax({
         url: 'https://api.github.com/users/' + user,
@@ -102,71 +104,32 @@ function github_commits(user, limit){
                 i++;
             } 
             // applies the html
-            $("#activity").html(out);
+            $('#activity').html(out);
         }  
     });
 }
 
+$(window).ready(function() { 
+    // project selector code
+    $('.project_button').on('click', function() {
+        // resets button colors
+        $('.project_button').css('color', '#FEFAFF');
+        $('.project_button').css('background-color', '#35343B');
+        // updates clicked buttons color
+        $(this).css('color', '#35343B');
+        $(this).css('background-color', '#FEFAFF');
+        // loads content
+        $('#viewer').html($('#PRJ' + $(this).attr('button-id')).html());
+        $('#description').html($('#DES' + $(this).attr('button-id')).html());
+    });
+});
+
+
 $(window).load(function() {
     // loads first snip-it into snip-it viewer
-    document.getElementById("viewer").innerHTML = document.getElementById("PRJ0").innerHTML;
-    document.getElementById("description").innerHTML = document.getElementById("DES0").innerHTML;
-    $("#BUT0").css('color', '#35343B');
-    $("#BUT0").css('background-color', '#FEFAFF');
-
+    $('#initial').trigger('click');
     // checks to see if im streaming on twitch
     pull_twitch_info("gflight92");
     // pulls latest commits from github
     github_commits("gantonious", 5);
 });
-
-function updateProjectPreview(ID){
-    var project;
-    var description;
-
-    // resets button colors
-    $("#BUT0").css('color', '#FEFAFF');
-    $("#BUT0").css('background-color', '#35343B');
-    $("#BUT1").css('color', '#FEFAFF');
-    $("#BUT1").css('background-color', '#35343B');
-    $("#BUT2").css('color', '#FEFAFF');
-    $("#BUT2").css('background-color', '#35343B');
-    $("#BUT3").css('color', '#FEFAFF');
-    $("#BUT3").css('background-color', '#35343B');
-
-    // updates viewer window, description, and indicates selected button
-    switch(ID) {
-        case 0:
-            project = document.getElementById("PRJ0");
-            description = document.getElementById("DES0");
-            document.getElementById("viewer").innerHTML = project.innerHTML;
-            document.getElementById("description").innerHTML = description.innerHTML;
-            $("#BUT0").css('color', '#35343B');
-            $("#BUT0").css('background-color', '#FEFAFF');
-            break;
-        case 1:
-            project = document.getElementById("PRJ1");
-            description = document.getElementById("DES1");
-            document.getElementById("viewer").innerHTML = project.innerHTML;
-            document.getElementById("description").innerHTML = description.innerHTML;
-            $("#BUT1").css('color', '#35343B');
-            $("#BUT1").css('background-color', '#FEFAFF');
-            break;
-        case 2:
-            project = document.getElementById("PRJ2");
-            description = document.getElementById("DES2");
-            document.getElementById("viewer").innerHTML = project.innerHTML;
-            document.getElementById("description").innerHTML = description.innerHTML;
-            $("#BUT2").css('color', '#35343B');
-            $("#BUT2").css('background-color', '#FEFAFF');
-            break;
-        case 3:
-            project = document.getElementById("PRJ3");
-            description = document.getElementById("DES3");
-            document.getElementById("viewer").innerHTML = project.innerHTML;
-            document.getElementById("description").innerHTML = description.innerHTML;
-            $("#BUT3").css('color', '#35343B');
-            $("#BUT3").css('background-color', '#FEFAFF');
-            break;
-    }
-}

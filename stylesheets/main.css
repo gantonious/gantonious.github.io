@@ -208,6 +208,7 @@ body {
 	position: absolute;
 	text-align: left;
 	font-size: 95%;
+	padding-right: 2px;
 	top: 0px;
 	left: 0px;	
 }
