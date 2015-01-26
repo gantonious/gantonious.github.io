@@ -97,6 +97,7 @@ body {
 
 .project_viewer {
 	position: relative;
+	display: inline-block;
 	width: 850px;
 	height: 270px;
 }
@@ -133,7 +134,7 @@ body {
 }
 
 .project_button {
-	width: 320px;
+	width: 310px;
 	height: 25px;
 	padding: 5px;
 	display: block;
