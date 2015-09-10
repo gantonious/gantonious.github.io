@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="stylesheets/nav_bar.css">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="scripts/index.js"></script>
-        <link href='http://fonts.googleapis.com/css?family=Roboto:300,100' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,100' rel='stylesheet' type='text/css'>
 
     </head>
 
@@ -51,11 +51,9 @@
 
             <p> 
                 <div class="info_block">
-                    <div class="info_icon">
-                        <div style="height: 16px;"></div>
-                        <span style="font-size: 390%; font-weight: 100;"><b><img src="media/icons/brackets.png" width="64" height="64"></b></span></div>
+                    <div class="info_icon"><div style="height: 22px;"></div><img src="media/icons/brackets.png" width="64" height="48"></div>
                     <div class="info_content">
-                        <h3 style="font-size: 130%%;">Programming Background</h3>
+                        <div style="font-size: 130%; font-weight: 400;">Programming Background</div>
                         <p>I have experience programming with MATLAB, Visual Basic, and C. I also have a basic understanding of web development languages such as HTML, CSS, and Java-script.</p>
                     </div>
                 </div>
@@ -63,7 +61,7 @@
                 <div class="info_block">
                     <div class="info_icon"><div style="height: 22px;"></div><img src="media/icons/controller.png" width="64" height="48"></div>
                         <div class="info_content">
-                        <h3 style="font-size: 130%;">Interests</h3>
+                        <div style="font-size: 130%; font-weight: 400;">Interests</div>
                         <p>I am interested in a wide variety of videogame genres from MMORPGs to arcade games. I also enjoy watching anime in my free time.</p>
                         </div>
                 </div>
@@ -71,7 +69,7 @@
                 <div class="info_block">
                     <div class="info_icon"><div style="height: 22px;"></div><img src="media/icons/book.png" width="48" height="48"></div>
                     <div class="info_content">
-                        <h3 style="font-size: 130%;">Educational Pursuits</h3>
+                        <div style="font-size: 130%; font-weight: 400;">Educational Pursuits</div>
                         <p>I am currently progressing through my undergraduate degree in computer engineering with software option at the University of Alberta.</p>
                     </div>
                 </div>
@@ -219,7 +217,20 @@
             </div>
         
         <p style="font-size:175%; font-weight:100;">Milestones</p>
+
         <p>
+            <div class="showcase_block">
+                <div class="showcase_icon">
+                <div style="height: 15px;"></div>
+                <span style="font-size: 140%;">MAR</span><br>
+                <span style="font-size: 70%">2015</span>
+                </div>
+                <div class="showcase_content">
+                    <span style="font-size: 130%;">enthalPy</span><br>
+                    EnthalPy is a single-player/co-op bullet hell game in the likes of Touhou and Geometry Wars. The game features enemies and bosses with unique bullet and moving patterns, multiple levels, controller support, and a power-up/points system. <a href="https://github.com/gantonious/c275-enthalpy">View source code on Github.</a>
+                </div>
+            </div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <div class="showcase_block">
                 <div class="showcase_icon">
                 <div style="height: 15px;"></div>
@@ -227,24 +238,10 @@
                 <span style="font-size: 70%">2014</span>
                 </div>
                 <div class="showcase_content">
-                <span style="font-size: 130%;">PvPunio</span><br>
-                A top down PvP game for Arduino. Features 360 degree moving and shooting, five different maps to play on, and powerups that are sure to make every game wild! Playtesting has shown this game to be difficult to put down. <a href="https://github.com/snackthyme/pvpuino">View source code on Github.</a>
-
+                    <span style="font-size: 130%;">PvPunio</span><br>
+                    A top down PvP game for Arduino. Features 360 degree moving and shooting, five different maps to play on, and powerups that are sure to make every game wild! Playtesting has shown this game to be difficult to put down. <a href="https://github.com/snackthyme/pvpuino">View source code on Github.</a>
                 </div>
-            </div>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <div class="showcase_block">
-                <div class="showcase_icon">
-                <div style="height: 15px;"></div>
-                <span style="font-size: 140%;">NOV</span><br>
-                <span style="font-size: 70%">2014</span>
-                </div>
-                <div class="showcase_content">
-                <span style="font-size: 130%;">Edmonton restaurant filterer for Arduino</span><br>
-                Allows you to navigate around the map of Edmonton and filter restaurants based on a threshold rating and closest proximity to the current cursor position. <a href="https://github.com/snackthyme/c274-restaurant-map-v2">View source code on Github.</a>
-                </div>
-            </div>
-        </p>
+            </div>      
         <p>
             <div class="showcase_block">
                 <div class="showcase_icon">
@@ -253,9 +250,8 @@
                 <span style="font-size: 70%">2014</span>
                 </div>
                 <div class="showcase_content">
-                <span style="font-size: 130%;">Encrypted Chat Client for Arduino</span><br>
-                This program facilitates 31 bit-encrypted communication between two Arduinos. Both Arduinos handshake automatically to begin an encrypted chat session, afterwards each user can communicate to one another via their local terminal. <a href="https://github.com/gantonious/encrypted-communication">View source code on Github.</a>
-
+                    <span style="font-size: 130%;">Encrypted Chat Client for Arduino</span><br>
+                    This program facilitates 31 bit-encrypted communication between two Arduinos. Both Arduinos handshake automatically to begin an encrypted chat session, afterwards each user can communicate to one another via their local terminal. <a href="https://github.com/gantonious/encrypted-communication">View source code on Github.</a>
                 </div>
             </div>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -265,16 +261,20 @@
                 <span style="font-size: 140%;">OCT</span><br>
                 <span style="font-size: 70%">2014</span>
                 </div>
-                  <div class="showcase_content">
-                <span style="font-size: 130%;">Started Website Development</span><br>
-                Started developing this website during the month of October, it started out with some basic HTML, CSS, and lorem, but I am slowly working on further developing this site. I am planning on utilizing more Java-script to make this site more interactive.
+                <div class="showcase_content">
+                    <span style="font-size: 130%;">Started Website Development</span><br>
+                    Started developing this website during the month of October, it started out with some basic HTML, CSS, and lorem, but I am slowly working on further developing this site. I am planning on utilizing more Java-script to make this site more interactive.
                 </div>
             </div>
         </p>
 
-        <p style="font-size:175%; font-weight:100;">Github Activity</p><br>
+        <p style="font-size:175%; font-weight:100;">Github Activity</p>
         <div id="activity" class="activity_container"></div>
-
+        <div style="display: inline-block;">
+            <input id="github_username" class="activity_input" value="lookup a different github account" onkeydown="if (event.keyCode == 13) {github_commits(document.getElementById('github_username').value, 5);}">
+            <button id="github_submit" class="activity_button" onclick="github_commits(document.getElementById('github_username').value, 5)">Find</button>
+            <br><br>
+        </div>
         </div>
 
         <div class = "foot">

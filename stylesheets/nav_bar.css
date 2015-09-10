@@ -1,6 +1,7 @@
 .nav_bar {
 	position: fixed;
 	font-family: roboto;
+	font-weight: 300;
 	top: 0px;
 	left: 0px;
 	opacity: 0.8;
