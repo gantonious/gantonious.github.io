@@ -106,8 +106,8 @@ function github_commits(user, limit){
 
             if (k == 0) {
                 out += '<div class="activity_block" style="width: 550px; display: inline-block;"><div class="activity_content">'; 
-                out += 'Could not find any recent commits for this fine user, aint that a shame ): you should go up and tell them ';
-                out += 'to make something amazing and to go on ahead and commit it so me the page robot can enjoy displaying all of ';
+                out += 'Could not find any recent commits for this user ): You should go up and tell them ';
+                out += 'to make something amazing and to go on ahead and commit it! So me the page robot can enjoy displaying all of ';
                 out += 'their cool codes :D'
                 out += '</span></div></div>';
             }
